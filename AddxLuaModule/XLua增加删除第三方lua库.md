@@ -63,7 +63,13 @@ XLua目前内置的扩展库：
 
     配套的android脚本是在linux下使用的，脚本开头的NDK路径要根据实际情况修改。
 
-### 二、C#侧集成
+3.1 在windows平台编译
+	在编译window平台的dll的时候要打开C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2017\Visual Studio Tools\VC这个目录下的 “适用于 VS 2017 的 x64 本机工具命令提示” 这个命令行：
+	1、cd E:\svn-race2\xLua-Tencent\build
+	2、运行make_win64_xxx.bat
+	3、OK~
+
+	### 二、C#侧集成
 
 所有lua的C扩展库都会提供个luaopen_xxx的函数，xxx是动态库的名字，比如lua-rapidjson库该函数是luaopen_rapidjson，这类函数由lua虚拟机在加载动态库时自动调用，而在手机平台，由于ios的限制我们加载不了动态库，而是直接编译进进程里头。
 
